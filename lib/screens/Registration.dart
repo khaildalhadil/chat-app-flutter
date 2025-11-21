@@ -1,3 +1,5 @@
+import 'package:chatappflutter/Widgets/AuthBtn.dart';
+import 'package:chatappflutter/constants.dart';
 import 'package:chatappflutter/screens/LoginScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -37,101 +39,36 @@ class _RegistrationState extends State<Registration> {
                 ),
 
                 TextField(
-                  decoration: InputDecoration(
+                  decoration: kTextFieldDecoration.copyWith(
                     labelText: "User Name",
-                    // hintText: "user Name",
-                    filled: true,
-                    fillColor: Colors.white,
                     icon: Icon(Icons.person),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(28.0)),
-                      borderSide: BorderSide(
-                        color: Colors.blueAccent,
-                        width: 1.0,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(28.0)),
-                      borderSide: BorderSide(
-                        color: Colors.blueAccent,
-                        width: 1.0,
-                      ),
-                    ),
                   ),
+                  onChanged: (value) => print(value),
                   maxLength: 20,
-                  onChanged: (value) => userName = value,
                 ),
 
                 TextField(
-                  decoration: InputDecoration(
-                    labelText: "Email ",
-                    // hintText: "user Name",
-                    filled: true,
-                    fillColor: Colors.white,
+                  decoration: kTextFieldDecoration.copyWith(
+                    labelText: "Email",
                     icon: Icon(Icons.email),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(28.0)),
-                      borderSide: BorderSide(
-                        color: Colors.blueAccent,
-                        width: 1.0,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(28.0)),
-                      borderSide: BorderSide(
-                        color: Colors.blueAccent,
-                        width: 1.0,
-                      ),
-                    ),
                   ),
+                  onChanged: (value) => print(value),
                   maxLength: 20,
-                  onChanged: (value) => userName = value,
                 ),
 
                 TextField(
-                  decoration: InputDecoration(
-                    labelText: "password",
-                    // hintText: "user Name",
-                    filled: true,
-                    fillColor: Colors.white,
+                  decoration: kTextFieldDecoration.copyWith(
+                    labelText: "Password",
                     icon: Icon(Icons.password_sharp),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(28.0)),
-                      borderSide: BorderSide(
-                        color: Colors.blueAccent,
-                        width: 1.0,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(28.0)),
-                      borderSide: BorderSide(
-                        color: Colors.blueAccent,
-                        width: 1.0,
-                      ),
-                    ),
-                    disabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(28.0)),
-                      borderSide: BorderSide(
-                        color: Colors.blueAccent,
-                        width: 1.0,
-                      ),
-                    ),
                   ),
+                  onChanged: (value) => print(value),
                   maxLength: 20,
-                  onChanged: (value) => password = value,
                 ),
-
                 // textField(Icon(Icons.password), "Password"),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueAccent.shade700,
-                    foregroundColor: Colors.white,
-                  ),
-                  onPressed: () => print("Check username and password"),
-                  child: Text(
-                    "Reigster",
-                    style: TextStyle(height: 3.0, fontSize: 18.0),
-                  ),
+                AuthBtn(
+                  Colors.blue.shade600,
+                  "Register",
+                  () => print("Register logic"),
                 ),
                 Row(
                   children: [
